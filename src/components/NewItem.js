@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import uniqueId from 'lodash/uniqueId';
 
 import './NewItem.css';
+import { connect } from 'react-redux';
+
+import { addItem } from '../redux/actions';
 
 class NewItem extends Component {
   state = { value: '' };
@@ -11,12 +13,10 @@ class NewItem extends Component {
   };
 
   handleSubmit = (event) => {
-    const { onSubmit } = this.props;
     const { value } = this.state;
-
+    const { onSubmit } = this.props;
     event.preventDefault();
-    const newItem = { value, packed: false, id: uniqueId };
-    onSubmit(newItem);
+    onSubmit(value);
     this.setState({ value: '' });
   };
 
@@ -32,4 +32,8 @@ class NewItem extends Component {
   }
 }
 
-export default NewItem;
+const mapDispatchToProps = (dispatch) => ({
+  onSubmit: (value) => dispatch(addItem(value)),
+});
+
+export default connect(null, mapDispatchToProps)(NewItem);

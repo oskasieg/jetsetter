@@ -23,7 +23,7 @@ Aplikacja ułatwiająca pakowanie niezbędnych rzeczy na wyjazd. Projekt stworzo
 * React.JS:
   * class components, containers pattern,  react-redux, redux-thunk, redux-saga,
 * HTML5,
-* CSS#.
+* CSS3.
 
 #### Uruchamienie:
 

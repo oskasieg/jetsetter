@@ -1,4 +1,9 @@
-.Application {
+.Jetsetter {
+  height: 100%;
   margin: auto;
   max-width: 400px;
+  margin: 1rem;
+  box-shadow: 0 0 1rem 3px #b8b8b8;
+  padding: 1rem;
+  border-radius: 10px;
 }

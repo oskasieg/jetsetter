@@ -82,10 +82,20 @@ const itemReducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === 'CHECKON_ALL') {
+    return {
+      items: {
+        past: [present, ...past],
+        present: present.map((item) => ({ ...item, packed: true })),
+        future: [],
+      },
+    };
+  }
+
   if (action.type === 'DELETE_UNPACKED_ITEMS') {
     return {
       items: {
-        past: [],
+        past: [present, ...past],
         present: present.filter((item) => item.packed),
         future: [],
       },

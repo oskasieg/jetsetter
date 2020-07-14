@@ -21,10 +21,6 @@ export default class CountDown extends Component {
 
   render() {
     const { timeLeft } = this.state;
-    return (
-      <div className="CountDown">
-        The Lyft will be here in about {timeLeft}.
-      </div>
-    );
+    return <div className='CountDown'>Time to go: {timeLeft}.</div>;
   }
 }

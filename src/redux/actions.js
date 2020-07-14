@@ -1,16 +1,14 @@
 import uniqueId from 'lodash/uniqueId';
 import Api from '../lib/api';
 
-export const getAllItems = () => {
-  return async (dispatch) => {
-    const items = await Api.getAll();
+export const fetchItems = () => ({
+  type: 'FETCH_ITEMS',
+});
 
-    dispatch({
-      type: 'UPDATE_ALL_ITEMS',
-      items,
-    });
-  };
-};
+export const updateAllItems = (items) => ({
+  type: 'UPDATE_ALL_ITEMS',
+  items,
+});
 
 export const addItem = (value) => {
   const item = {
@@ -59,6 +57,15 @@ export const checkOffAll = () => {
         type: 'CHECKOFF_ALL',
       })
     );
+  };
+};
+
+export const checkOnAll = () => {
+  return async (dispatch) => {
+    await Api.markAllAsPacked();
+    dispatch({
+      type: 'CHECKON_ALL',
+    });
   };
 };
 

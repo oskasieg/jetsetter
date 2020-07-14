@@ -26,7 +26,7 @@ class NewItem extends Component {
     return (
       <form className='NewItem' onSubmit={this.handleSubmit}>
         <input className='NewItem-input' type='text' value={value} onChange={this.handleChange} />
-        <input className='NewItem-submit button' type='submit' />
+        <input className='NewItem-submit button' type='submit' value='Add' />
       </form>
     );
   }

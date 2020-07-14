@@ -22,17 +22,20 @@ export default {
 
   async delete({ id }) {
     const items = await getAll();
-    localforage.setItem('items', items.filter(item => item.id !== id));
+    localforage.setItem(
+      'items',
+      items.filter((item) => item.id !== id)
+    );
   },
 
   async update(updatedItem) {
     const items = await getAll();
     localforage.setItem(
       'items',
-      items.map(item => {
+      items.map((item) => {
         if (item.id === updatedItem.id) return { ...item, ...updatedItem };
         return item;
-      }),
+      })
     );
   },
 
@@ -40,12 +43,23 @@ export default {
     const items = await getAll();
     localforage.setItem(
       'items',
-      items.map(item => ({ ...item, packed: false })),
+      items.map((item) => ({ ...item, packed: false }))
+    );
+  },
+
+  async markAllAsPacked() {
+    const items = await getAll();
+    localforage.setItem(
+      'items',
+      items.map((item) => ({ ...item, packed: true }))
     );
   },
 
   async deleteUnpackedItems() {
     const items = await getAll();
-    localforage.setItem('items', items.filter(({ packed }) => packed));
+    localforage.setItem(
+      'items',
+      items.filter(({ packed }) => packed)
+    );
   },
 };

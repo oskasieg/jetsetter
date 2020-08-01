@@ -3,6 +3,10 @@
 
 Aplikacja ułatwiająca pakowanie niezbędnych rzeczy na wyjazd. Projekt stworzony w ramach utrwalenia wiadomości pozyskanych w trakcie kursu na platformie *frontendmasters.com* dotyczącego zarządzania stanem aplikacji w React.JS.
 
+## DEMO
+
+*https://jetsetter.netlify.app/*
+
 #### Aplikacja składa się z jednego kontenera, kilku komponentów oraz prostego API
 
 * odpowiada on za przydzielanie stanu odpowiednim komponentom w aplikacji,
